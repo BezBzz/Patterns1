@@ -26,8 +26,8 @@ public class UserGeneration {
         return city;
     }
 
-    public static String generateData(int shiftData) {
-        String meetDate = LocalDate.now().plusDays(shiftData).format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
+    public static String generateData(int Day) {
+        String meetDate = LocalDate.now().plusDays(Day).format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
         return meetDate;
     }
 
