@@ -9,7 +9,7 @@ import java.util.Locale;
 public class UserGeneration {
     public static UserData generateUser(int Day) {
         String city = generateCity();
-        String date = generateData(Day);
+        String date = generateDate(Day);
         String name = generateName();
         String phone = generatePhone();
         UserData user = new UserData(city, date, name, phone);
@@ -26,7 +26,7 @@ public class UserGeneration {
         return city;
     }
 
-    public static String generateData(int Day) {
+    public static String generateDate(int Day) {
         String meetDate = LocalDate.now().plusDays(Day).format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
         return meetDate;
     }
