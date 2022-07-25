@@ -1,6 +1,8 @@
 package ru.netology;
 
 import com.codeborne.selenide.SelenideElement;
+import io.github.bonigarcia.wdm.WebDriverManager;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.Keys;
@@ -14,7 +16,10 @@ public class DeliveryTest {
     SelenideElement form = $("form");
     SelenideElement success = $("div[data-test-id='success-notification']");
     SelenideElement replan = $("div[data-test-id='replan-notification']");
-
+@BeforeAll
+static void setupAll() {
+    WebDriverManager.chromedriver().setup();
+}
     @BeforeEach
     public void setup() {open("http://localhost:9999/");}
     @Test
