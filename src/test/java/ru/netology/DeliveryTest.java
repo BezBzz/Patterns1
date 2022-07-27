@@ -16,15 +16,15 @@ public class DeliveryTest {
     SelenideElement form = $("form");
     SelenideElement success = $("div[data-test-id='success-notification']");
     SelenideElement replan = $("div[data-test-id='replan-notification']");
-@BeforeAll
-static void setupAll() {
-    WebDriverManager.chromedriver().setup();
-}
+
+
     @BeforeEach
-    public void setup() {open("http://localhost:9999/");}
+    public void setup() {
+        open("http://localhost:9999/");
+    }
+
     @Test
     void shouldSubmitRequest() {
-        UserGeneration UserGenerator;
         UserData user = UserGeneration.generateUser(7);
         form.$x(".//span[@data-test-id='city']//input").val(user.getCity());
         form.$x(".//span[@data-test-id='date']//input[@class='input__control']").doubleClick().sendKeys(Keys.BACK_SPACE);

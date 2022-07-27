@@ -7,12 +7,12 @@ import java.time.format.DateTimeFormatter;
 import java.util.Locale;
 
 public class UserGeneration {
-    public static UserData generateUser(int Day) {
+    public static UserData generateUser(int day) {
         String city = generateCity();
-        String date = generateDate(Day);
+        String date = generateDate(day);
         String name = generateName();
         String phone = generatePhone();
-        UserData user = new UserData(city, date, name, phone);
+        UserData user = new UserData(city, name, phone);
         return user;
     }
 
@@ -26,8 +26,8 @@ public class UserGeneration {
         return city;
     }
 
-    public static String generateDate(int Day) {
-        String meetDate = LocalDate.now().plusDays(Day).format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
+    public static String generateDate(int day) {
+        String meetDate = LocalDate.now().plusDays(day).format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
         return meetDate;
     }
 
